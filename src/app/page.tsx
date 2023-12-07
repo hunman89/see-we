@@ -1,21 +1,38 @@
-import Link from "next/link";
-
 export default function Home() {
-  const data10_15 = encodeURI(
-    '{"paths":[[{"lat":37.5350315,"lng":126.9734515}],[{"lat":37.5704841,"lng":126.9884616}],[{"lat":37.5649611,"lng":126.9764825},{"lat":37.5697599,"lng":126.9836604}]]}'
-  );
   return (
     <div>
-      <Link
-        href={{
-          pathname: "/map",
-          query: {
-            data: data10_15,
-          },
-        }}
-      >
-        10/15
-      </Link>
+      <div className="flex flex-col p-10">
+        <div className="flex justify-center text-center text-5xl">
+          오늘의 집회
+        </div>
+        <div className="flex justify-end align-bottom">2023. 10. 07(토)</div>
+      </div>
+      <table className="w-full table-auto border-collapse border text-lg">
+        <thead>
+          <tr>
+            <th className="border p-2">집회 일시</th>
+            <th className="border p-2">집회 장소</th>
+            <th className="border p-2">신고 인원</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td className="border p-2">13:00∼16:00</td>
+            <td className="border p-2">{`고속터미널역 1出 → 신반포 8차 상가 <반포동>`}</td>
+            <td className="border p-2">200</td>
+          </tr>
+          <tr>
+            <td className="border p-2">13:00∼15:00</td>
+            <td className="border p-2">{`경찰청 좌측 인도 <미근동>`}</td>
+            <td className="border p-2">300</td>
+          </tr>
+          <tr>
+            <td className="border p-2">14:00∼18:00</td>
+            <td className="border p-2">{`탑골공원 삼일문 앞 <종로2가>`}</td>
+            <td className="border p-2">120</td>
+          </tr>
+        </tbody>
+      </table>
     </div>
   );
 }
